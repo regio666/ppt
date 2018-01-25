@@ -1,7 +1,8 @@
 /**
  * Clase principal.
- * Versi√≥n 1.0
- * Autor: Profesor Entorno Desarrollo
+ * @version 1.1
+ * @author Profesor Entorno Desarrollo
+ * @author Sergio Fern·ndez Pina para EDE
  */
 public class Game {
 
@@ -11,6 +12,10 @@ public class Game {
 		parser = new Parser();
 	}
 
+	/**
+	 * AÒadimos los nuevos elmenetos al mensaje del juego.
+	 */
+	
 	private void welcome() {
 		System.out.println("Bienvenido a nuestro peque√±o juego: Piedra Papel Tijeras Lagartija Spock :-D");
 	}
