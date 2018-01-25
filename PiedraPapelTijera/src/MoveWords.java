@@ -5,9 +5,12 @@ public class MoveWords{
     public static final int EMPATE = 0;
     public static final int GANA = 1;
     public static final int PIERDE = 2;
-
-    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA"};
-    private static final String[] validCommands = {"SALIR", "HELP"};
+/**
+ * Añadimos los nuevos elementos al array validMoves.
+ * También he modificado "HELP" por "AYUDA". en validCommands.
+ */
+    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "LAGARTIJA", "SPOCK"};
+    private static final String[] validCommands = {"SALIR", "AYUDA"};
 
     private Random rnd;
     
@@ -54,20 +57,38 @@ public class MoveWords{
     private static int getIndex(String value){
 	    for (int i =0; i< validMoves.length; i++){
 	        if(validMoves[i].equals(value))
-		        return i;
+	        
+	        	return i;
 	    }
     	return -1;
     }
 
     public static int checkWinner(String first, String second){
 	    int first_i, second_i;
-
+	    
 	    first_i = getIndex(first);
 	    second_i = getIndex(second);
-
+	    
 	    if (first_i == second_i) return EMPATE;
 	    
-	    return (( (first_i +1) % validMoves.length ) == second_i ) ? GANA: PIERDE;
+	    /**
+	     * Seguimos la secuencia del juego para las opciones ganadoras,
+	     * en caso contrario se pierde.
+	     */    
+	    
+	    if (first_i==0 && second_i==1) return GANA;
+	    if (first_i==1 && second_i==2) return GANA;
+	    if (first_i==2 && second_i==3) return GANA;
+	    if (first_i==3 && second_i==4) return GANA;
+	    if (first_i==4 && second_i==0) return GANA;
+	    if (first_i==0 && second_i==3) return GANA;
+	    if (first_i==3 && second_i==1) return GANA;
+	    if (first_i==1 && second_i==4) return GANA;
+	    if (first_i==4 && second_i==2) return GANA;
+	    if (first_i==2 && second_i==0) return GANA;
+	    
+	    else {return PIERDE;}
+	  	  	    
 	}
 	
 } 
