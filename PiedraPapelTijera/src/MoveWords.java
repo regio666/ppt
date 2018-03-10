@@ -9,7 +9,7 @@ public class MoveWords{
  * Añadimos los nuevos elementos al array validMoves.
  * También he modificado "HELP" por "AYUDA". en validCommands.
  */
-    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "LAGARTIJA", "SPOCK"};
+    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "LAGARTIJA", "TORITO"};
     private static final String[] validCommands = {"SALIR", "AYUDA"};
 
     private Random rnd;
